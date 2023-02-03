@@ -1,15 +1,105 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Document Store</title>
+</head>
 <style>
-    body {
-	background-image: url("922661.webp");
-	font-family: 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+	body{
+		background-image: url("922661.webp");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
   background-size: 100% 100%;
+	}
+	*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  
+}
 
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+  min-height: 100vh;
+  
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+a:link {
+	color: rgb(255, 249, 249);
+	text-decoration: none;
 }
 
 header  nav li :hover{
@@ -25,6 +115,7 @@ header  nav li{
     float: left;
     margin-right: 20px;
 	padding-left: 10px;
+	margin-top: 10px;
 
 }
 
@@ -39,122 +130,101 @@ header nav li a.active {
 	padding-bottom:2px;
 }
 
-.container {
-  background-color: #f2f2f2;
-  padding: 15px 20px 55px 50px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-weight: bold;
-	margin: auto;
-	width:45%;
-	text-align:center;
-	margin:0;
-	padding: 0;
-	position: absolute;
-	top: 50%;
-	left:50%;
-	transform: translateX(-50%) translateY(-50%);
-}
-
-input[type=text] {
-  width: 65%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
-button{
-    font-weight: bold;
-}
 </style>
-</head>
 <body>
-    <header>
+	<header>
 		<nav class="navbar navbar-expand-sm bg-dark">
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><span><a class="nav-link"
-							href="mainpage.html">Home</a></span></li>
-                    <li class="nav-item "><span><a class="nav-link" 
-                        href="order.html">Order</a></span></li>
-					<li class="nav-item "><span><a class="nav-link"
-							href="mainpage.html">Logout</a></span></li>
+                <div class="collapse navbar-collapse" id="navbarNav">                
+				<ul class="navbar-nav" >
+					<li class="nav-item"><span><a class="nav-link" href="mainpage.html">Home</a></span></li>
+					<li class="nav-item "><span><a class="nav-link" href="profile.html">Profile</a></span></li>
+					<li class="nav-item "><span><a class="nav-link" href="catalogue.html">Catalogue</a></span></li>
+					<li class="nav-item "><span><a class="nav-link" href="order.html">Order</a></span></li>
 				</ul>
-			</div>
-		</nav>
+				</div>
+			</nav>
 	</header>
-	<br>
-	<br>
-	<br>
-	<div class="container">
-		<div>
-			<div>
-				<div class="container">
-					<form action="pay" method="post">
 
-						<div class="row">
-							<div class="col-50">
-								<h3>Billing Address</h3>
-								<label for="fname"><i class="fa fa-user"></i> Full Name</label>
-								<input type="text" id="fname" name="firstname"
-									placeholder="John M. Doe"> 
-								<label for="email"><i class="fa fa-envelope"></i> Email</label> 
-								<input type="text" id="email"
-					 				name="email" placeholder="john@example.com"> 
-					 				<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-								<input type="text" id="adr" name="address" required> 
-								<label for="city"><i class="fa fa-institution"></i> City</label> 
-								<input type="text"
-									id="city" name="city">
+<div class="container">
 
-								<div class="row">
-									<div class="col-50">
-										<label for="state">State</label> <input type="text" id="state"
-											name="state">
-									</div>
-									<div class="col-50">
-										<label for="zip">Pin Code</label> <input type="text" id="zip"
-											name="zip">
-									</div>
-								</div>
-							</div>
+    <form action="">
 
-							<div>
-								<h3>Payment</h3>
-								<label for="fname">Accepted Cards</label>
-								<div class="icon-container">
-									<i class="fa fa-cc-visa" style="color: navy;"></i> 
-								</div>
-								<label for="cname">Name on Card</label> <input type="text"
-									id="cname" name="cardname" placeholder="John">
-								<label for="ccnum">Card number</label> <input type="text"
-									id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
-								<label for="expmonth">Exp Month</label> <input type="text"
-									id="expmonth" name="expmonth" placeholder="September">
+        <div class="row">
 
-								<div class="row">
-									<div class="col-50">
-										<label for="expyear">Exp Year</label> <input type="text"
-											id="expyear" name="expyear" placeholder="2018">
-									</div>
-									<div class="col-50">
-										<label for="cvv">CVV</label> <input type="text" id="cvv"
-											name="cvv" placeholder="352">
-									</div>
-								</div>
-							</div>
-						</div>
-                        <button style="background-color:white;" type="submit" >Make Payment</button>
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" placeholder="john deo">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" placeholder="room - street - locality">
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" placeholder="mumbai">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" placeholder="india">
+                    </div>
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" placeholder="123 456">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" placeholder="mr. john deo">
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444">
+                </div>
+                <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="text" placeholder="january">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="number" placeholder="2022">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="1234">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+
+    </form>
+
+</div>    
+    
 </body>
 </html>
