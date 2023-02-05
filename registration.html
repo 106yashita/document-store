@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Document Store</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark">
+                <div class="collapse navbar-collapse" id="navbarNav">                
+				<ul class="navbar-nav" >
+					<li class="nav-item"><span><a class="nav-link" href="mainpage.html">Home</a></span></li>
+					<li class="nav-item "><span><a class="nav-link" href="login.html">Login</a></span></li>
+					<li class="nav-item "><span><a class="nav-link " href="registration.html">Register</a></span></li>
+				</ul>
+				</div>
+			</nav>
+	</header>
+	<br/>
+	
+	<form id="form" action="userreg" method="post">
+		<table class="tab" style="width:40%">
+
+			<tr style="background-color: white; color: green; border-radius: 25%">
+				<td>Enter the Registration Details</td>
+			</tr>
+			<tr>
+				<td>
+				<div class="input-control">
+				<label for="passWord">Username : </label> 
+				<input
+					type="text" name="username" id="userName"
+					placeholder="Enter your Username" required>
+					<div class="error"></div>
+				</div>
+				<br/>
+				<div class="input-control">
+				<label for="passWord">Password : </label> 
+				<input
+					type="password" name="password" id="passWord"
+					placeholder="Enter Password" required>
+					<div class="error"></div>
+				</div>
+				<br>
+				<div class="input-control">
+				<label for="firstName">First Name : </label> 
+				<input
+					type="text" name="firstname" id="firstName"
+					placeholder="Enter your First Name" required>
+					<div class="error"></div>
+				</div>
+				<br>
+				<div class="input-control">
+				<label for="lastName">Last Name : </label> 
+				<input
+					type="text" name="lastname" id="lastName"
+					placeholder="Enter your Last Name" required>
+					<div class="error"></div>
+				<br>
+				</div>
+				<div class="input-control">
+				<label for="phno">Mobile No : </label> 
+				<input type="text"
+					name="phone" id="phno" placeholder="Enter your Phone Number"
+					required>
+					<div class="error"></div>
+				</div>	
+				<br>
+				<div class="input-control">
+				<label for="Email" style="margin-right: 5%"> Email Id : </label> 
+					<input type="text" name="mailid" id="Email"
+					placeholder="Enter your Email">
+					<div class="error"></div>
+				</div>
+				<br>
+				<input type="checkbox"
+					name="acceptance" /> 
+				<label
+					for="checkbox" for="acceptance"
+					style="font-size: small; color: blue">I
+						ACCEPT ALL TERMS &amp; CONDITIONS</label>
+				<br>
+				<button type="submit" id="submit">REGISTER ME</button>
+				</td>
+			</tr>
+	
+		</table>
+	</form>
+	<script src="script.js"></script>
+</body>
+
+</html>
