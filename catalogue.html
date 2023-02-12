@@ -4,14 +4,41 @@
 <title>Document Store</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  
-  th,td {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 40px;
-    color:white;
-  }
+
+  .onClickTextOverImage{
+  width: 280px;
+  height:280px;
+  background-size:cover;
+  display:inline-block;
+  border-radius:16px;
+  margin:10px;
+  box-shadow:0 0 16px rgba(0,0,0,0.5);
+  cursor:pointer;
+  position:relative;
+}
+
+.onClickTextOverImage div{
+  position:absolute;
+  color:#fff;
+  padding:8px;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  background-color:rgba(0,0,0,0.5);
+  border-radius:16px;
+  padding-top:35%;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
+
+.onClickTextOverImage.show div{
+  opacity:1;
+  padding-top:40%;
+  visibility:visible;
+}
 </style>
 </head>
 <body>
@@ -32,17 +59,54 @@
 		</nav>
 	</header>
 	<br>
-<table>
-  <tr>
-    <th><img src="img1.jfif"><br> c++ book</th>
-    <td><img src="img2.jfif"><br>c book</td> 
-    <td><img src="img3.jfif"><br> java book</td>
-  </tr>
-<tr>
-    <th><img src="img4.jfif"><br> html book</th>
-    <td><img src="img5.jfif"><br>css book</td> 
-    <td><img src="img6.jfif"><br> javascipt book</td>
-  </tr>
-</table>
+  <div class="onClickTextOverImage"
+  style="background-image:url(img1.jfif)">
+<div><a  onclick="stopPropagation(event)">C++ book <br> Rs.100</a></div>
+</div>
+
+<div class="onClickTextOverImage"
+  style="background-image:url(img3.jfif)">
+<div><a  onclick="stopPropagation(event)">Java Book <br> Rs.140</a></div>
+</div>
+
+<div class="onClickTextOverImage"
+  style="background-image:url(img4.jfif)">
+<div> <a  onclick="stopPropagation(event)">HTML Book <br> Rs.250</a></div>
+</div>
+
+<div class="onClickTextOverImage"
+  style="background-image:url(img5.jfif)">
+<div> <a  onclick="stopPropagation(event)">CSS Book <br> Rs.120</a></div>
+</div>
+<div class="onClickTextOverImage"
+  style="background-image:url(img5.jfif)">
+<div> <a  onclick="stopPropagation(event)">CSS Book <br> Rs.120</a></div>
+</div>
+
+<div class="onClickTextOverImage"
+  style="background-image:url(img6.jfif)">
+<div>JavaScript Book <br> Rs.150</a></div>
+</div>
+<script>
+  var textOverImages = document.getElementsByClassName("onClickTextOverImage");
+var previousTextOverImage;
+for (var i = 0; i < textOverImages.length; i++) {
+  textOverImages[i].onclick = function() {
+    var classes = this.classList;
+    if (classes.contains("show")) {
+      classes.remove("show");
+    } else {
+      if (previousTextOverImage != null)
+        previousTextOverImage.classList.remove("show");
+      previousTextOverImage = this;
+      classes.add("show");
+    }
+  }
+}
+
+function stopPropagation(event){
+  event.stopPropagation();
+}
+</script>
 </body>
 </html>
