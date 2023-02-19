@@ -327,3 +327,19 @@ hr{
     cursor: pointer;
   }
 
+
+
+  @media  screen and (max-width:700px) {
+	#topmid {
+		font-size: 20px;
+	}
+
+	header  nav li{
+		height: 30%;
+		float: left;
+		margin-right: 9px;
+		padding-left: 4px;
+	
+	}
+  }
+
